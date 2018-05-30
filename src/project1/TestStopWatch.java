@@ -20,7 +20,7 @@ public class TestStopWatch {
 
 	// default constructor test
 	@Test
-	public void testDefaultConstructor() {
+	public void testDefaultConstructorMJMK() {
 		StopWatch s = new StopWatch();
 		assertTrue(s.getMinutes() == 0);
 		assertTrue(s.getSeconds() == 0);
@@ -28,7 +28,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testConstructor1Parameter() {
+	public void testConstructor1ParameterMJMK() {
 		StopWatch s = new StopWatch(2);
 		assertTrue(s.getMinutes() == 0);
 		assertTrue(s.getSeconds() == 0);
@@ -36,7 +36,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testConstructor2Parameters() {
+	public void testConstructor2ParametersMJMK() {
 		StopWatch s = new StopWatch(2, 3);
 		assertTrue(s.getMinutes() == 0);
 		assertTrue(s.getSeconds() == 2);
@@ -44,7 +44,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testConstructor3Parameters() {
+	public void testConstructor3ParametersMJMK() {
 		StopWatch s = new StopWatch(2, 3, 4);
 		assertTrue(s.getMinutes() == 2);
 		assertTrue(s.getSeconds() == 3);
@@ -52,7 +52,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testConstructor() {
+	public void testConstructorMJMK() {
 		StopWatch s = new StopWatch(5, 10, 300);
 		assertEquals(s.toString(), "5:10:300");
 
@@ -68,101 +68,101 @@ public class TestStopWatch {
 
 	// Constructor over limit testing (Max Jensen)
 	@Test(expected = IllegalArgumentException.class)
-	public void testnooInput() {
+	public void testnooInputMJMK() {
 		new StopWatch(12, 61, 1001);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnonInput() {
+	public void testnonInputMJMK() {
 		new StopWatch(12, 61, 14);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnoInput() {
+	public void testnnoInputMJMK() {
 		new StopWatch(12, 59, 1001);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testooInput() {
+	public void testooInputMJMK() {
 		new StopWatch(61, 1001);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testonInput() {
+	public void testonInputMJMK() {
 		new StopWatch(61, 999);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnoInput() {
+	public void testnoInputMJMK() {
 		new StopWatch(59, 1001);
 	}
 
 	// Negative Constructor testing (Max Jensen)
 	@Test(expected = IllegalArgumentException.class)
-	public void testNegSingleInput2() {
+	public void testNegSingleInput2MJMK() {
 		new StopWatch(-1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnParameters() {
+	public void testnnParametersMJMK() {
 		new StopWatch(-1, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnpParameters() {
+	public void testnpParametersMJMK() {
 		new StopWatch(-1, 1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testpnParameters() {
+	public void testpnParametersMJMK() {
 		new StopWatch(-1, 1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnnParameters() {
+	public void testnnnParametersMJMK() {
 		new StopWatch(-1, -1, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnpParameters() {
+	public void testnnpParametersMJMK() {
 		new StopWatch(-1, -1, 1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnpnParameters() {
+	public void testnpnParametersMJMK() {
 		new StopWatch(-1, 1, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testppnParameters() {
+	public void testppnParametersMJMK() {
 		new StopWatch(1, 1, -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnppParameters() {
+	public void testnppParametersMJMK() {
 		new StopWatch(-1, 1, 1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testpnpParameters() {
+	public void testpnpParametersMJMK() {
 		new StopWatch(1, -1, 1);
 	}
 
 	// String constructor working testing
 	@Test
-	public void testStringConst3Params() {
+	public void testStringConst3ParamsMJMK() {
 		StopWatch s1 = new StopWatch("5:5:300");
 		assertEquals(s1.toString(), "5:05:300");
 	}
 
 	@Test
-	public void testStringConst2Params() {
+	public void testStringConst2ParamsMJMK() {
 		StopWatch s1 = new StopWatch("5:300");
 		assertEquals(s1.toString(), "0:05:300");
 	}
 
 	@Test
-	public void testStringConst1Params() {
+	public void testStringConst1ParamsMJMK() {
 		StopWatch s1 = new StopWatch("1");
 		assertEquals(s1.toString(), "0:00:001");
 	}
@@ -170,215 +170,215 @@ public class TestStopWatch {
 	// String constructor under testing (Max Jensen)
 	// min sec and milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testuuuConstructor() {
+	public void testuuuConstructorMJMK() {
 		new StopWatch("-1:-1:-1");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testuunConstructor() {
+	public void testuunConstructorMJMK() {
 		new StopWatch("-1:-1:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testunnConstructor() {
+	public void testunnConstructorMJMK() {
 		new StopWatch("-1:34:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnunConstructor() {
+	public void testnunConstructorMJMK() {
 		new StopWatch("1:-34:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testunuConstructor() {
+	public void testunuConstructorMJMK() {
 		new StopWatch("-1:34:-999");
 	}
 
 	// sec and milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testunConstructor() {
+	public void testunConstructorMJMK() {
 		new StopWatch("-34:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnuConstructor() {
+	public void testnuConstructorMJMK() {
 		new StopWatch("34:-999");
 	}
 
 	// milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testuConstructor() {
+	public void testuConstructorMJMK() {
 		new StopWatch("-999");
 	}
 
 	// String constructor over testing (Max Jensen)
 	// min sec and milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testnooConstructor() {
+	public void testnooConstructorMJMK() {
 		new StopWatch("2:61:1001");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnoConstructor() {
+	public void testnnoConstructorMJMK() {
 		new StopWatch("2:59:1001");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnonConstructor() {
+	public void testnonConstructorMJMK() {
 		new StopWatch("2:61:999");
 	}
 
 	// sec and milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testooConstructor() {
+	public void testooConstructorMJMK() {
 		new StopWatch("61:1001");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnoConstructor() {
+	public void testnoConstructorMJMK() {
 		new StopWatch("59:1001");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testonConstructor() {
+	public void testonConstructorMJMK() {
 		new StopWatch("61:999");
 	}
 
 	// milli
 	@Test(expected = IllegalArgumentException.class)
-	public void testoConstructor() {
+	public void testoConstructorMJMK() {
 		new StopWatch("1001");
 	}
 
 	// String constructor alpha testing (Max Jensen)
 	@Test(expected = IllegalArgumentException.class)
-	public void testannConstructor() {
+	public void testannConstructorMJMK() {
 		new StopWatch("a:34:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnanConstructor() {
+	public void testnanConstructorMJMK() {
 		new StopWatch("10:a:999");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnnaConstructor() {
+	public void testnnaConstructorMJMK() {
 		new StopWatch("15:55:a");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testaaInput() {
+	public void testaaInputMJMK() {
 		new StopWatch("a:a");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testanInput() {
+	public void testanInputMJMK() {
 		new StopWatch("a:15");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testnaInput() {
+	public void testnaInputMJMK() {
 		new StopWatch("15:a");
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void testaInput() {
+	public void testaInputMJMK() {
 		new StopWatch("a");
 	}
 
 	// toString testing (Max Jensen)
 	@Test
-	public void testminsecmilliToString() {
+	public void testminsecmilliToStringMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		assertEquals(s1.toString(), "5:59:300");
 	}
 
 	@Test
-	public void testSecZeroesToString() {
+	public void testSecZeroesToStringMJMK() {
 		StopWatch s1 = new StopWatch(5, 5, 300);
 		assertEquals(s1.toString(), "5:05:300");
 	}
 
 	@Test
-	public void testMilliZeroesToString() {
+	public void testMilliZeroesToStringMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 1);
 		assertEquals(s1.toString(), "5:59:001");
 	}
 
 	@Test
-	public void testsecmilliToString() {
+	public void testsecmilliToStringMJMK() {
 		StopWatch s1 = new StopWatch(59, 300);
 		assertEquals(s1.toString(), "0:59:300");
 	}
 
 	@Test
-	public void testMinZeroesToString() {
+	public void testMinZeroesToStringMJMK() {
 		StopWatch s1 = new StopWatch(1, 0, 300);
 		assertEquals(s1.toString(), "1:00:300");
 	}
 
 	@Test
-	public void testmilliToString() {
+	public void testmilliToStringMJMK() {
 		StopWatch s1 = new StopWatch(300);
 		assertEquals(s1.toString(), "0:00:300");
 	}
 
 	@Test
-	public void testMilli1ToString() {
+	public void testMilli1ToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 0, 1);
 		assertEquals(s1.toString(), "0:00:001");
 	}
 
 	@Test
-	public void testMilli10ToString() {
+	public void testMilli10ToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 0, 10);
 		assertEquals(s1.toString(), "0:00:010");
 	}
 
 	@Test
-	public void testMilli100ToString() {
+	public void testMilli100ToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 0, 100);
 		assertEquals(s1.toString(), "0:00:100");
 	}
 
 	@Test
-	public void testSec1ToString() {
+	public void testSec1ToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 1, 00);
 		assertEquals(s1.toString(), "0:01:000");
 	}
 
 	@Test
-	public void testSec10ToString() {
+	public void testSec10ToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 10, 00);
 		assertEquals(s1.toString(), "0:10:000");
 	}
 
 	@Test
-	public void testMin1ToString() {
+	public void testMin1ToStringMJMK() {
 		StopWatch s1 = new StopWatch(1, 0, 00);
 		assertEquals(s1.toString(), "1:00:000");
 	}
 
 	@Test
-	public void testMin10ToString() {
+	public void testMin10ToStringMJMK() {
 		StopWatch s1 = new StopWatch(10, 0, 00);
 		assertEquals(s1.toString(), "10:00:000");
 	}
 
 	@Test
-	public void testMin100ToString() {
+	public void testMin100ToStringMJMK() {
 		StopWatch s1 = new StopWatch(100, 0, 00);
 		assertEquals(s1.toString(), "100:00:000");
 	}
 
 	@Test
-	public void testAllZeroesToString() {
+	public void testAllZeroesToStringMJMK() {
 		StopWatch s1 = new StopWatch(0, 0, 0);
 		assertEquals(s1.toString(), "0:00:000");
 	}
 
 	@Test
-	public void testAddMethod() {
+	public void testAddMethodMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		s1.add(2000);
 		assertEquals(s1.toString(), "6:01:300");
@@ -396,7 +396,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testEqual() {
+	public void testEqualMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(6, 01, 200);
 		StopWatch s3 = new StopWatch(5, 50, 200);
@@ -412,7 +412,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testLoadSave() {
+	public void testLoadSaveMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(5, 59, 300);
 
@@ -424,7 +424,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testMutate() {
+	public void testMutateMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(5, 59, 300);
 
@@ -435,7 +435,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void equalsTest() {
+	public void equalsTestMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(5, 59, 300);
 
@@ -443,7 +443,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void StopWatchStartTime() {
+	public void StopWatchStartTimeMJMK() {
 		StopWatch s1 = new StopWatch("5:59:200");
 		assertTrue(s1.toString().equals("5:59:200"));
 		StopWatch s2 = new StopWatch("35:43:594");
@@ -469,7 +469,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testEqualsObjectOther() {
+	public void testEqualsObjectOtherMJMK() {
 		//
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(5, 59, 300);
@@ -504,7 +504,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testEqualsStopWatch() {
+	public void testEqualsStopWatchMJMK() {
 		StopWatch s1 = new StopWatch("5:01:902");
 		StopWatch s2 = new StopWatch("5:01:902");
 		StopWatch s3 = new StopWatch("0:05:050");
@@ -530,7 +530,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void testCompareTo() {
+	public void testCompareToMJMK() {
 		StopWatch s1 = new StopWatch(5, 59, 300);
 		StopWatch s2 = new StopWatch(5, 59, 300);
 		StopWatch s3 = new StopWatch(4, 50, 200);
@@ -565,7 +565,7 @@ public class TestStopWatch {
 
 	// RS
 	@Test
-	public void AddTest_LargeParam() {
+	public void AddTest_LargeParamMJMK() {
 		StopWatch f = new StopWatch("0:00:000");
 		f.add(9000000);
 		assertEquals(f.toString(), "150:00:000");
@@ -573,21 +573,21 @@ public class TestStopWatch {
 
 	// RS
 	@Test(expected = IllegalArgumentException.class)
-	public void AddTest_Neg1() {
+	public void AddTest_Neg1MJMK() {
 		StopWatch f = new StopWatch("50:50:050");
 		f.add(-10);
 	}
 
 	// RS
 	@Test
-	public void AddTest_AddZero() {
+	public void AddTest_AddZeroMJMK() {
 		StopWatch f = new StopWatch("20:30:050");
 		f.add(0);
 		assertEquals(f.toString(), "20:30:050");
 	}
 
 	@Test
-	public void AddStopWatchTest_Normal() {
+	public void AddStopWatchTest_NormalMJMK() {
 		StopWatch f = new StopWatch("0:0:0");
 		StopWatch bg = new StopWatch(59, 599);
 		f.add(bg);
@@ -595,82 +595,82 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void SubMilliseconds_NormalTest() {
+	public void SubMilliseconds_NormalTestMJMK() {
 		StopWatch g = new StopWatch(1, 122);
 		g.sub(22);
 		Assert.assertEquals(g.getMilliseconds(), 100);
 	}
 
 	@Test
-	public void SubMilliseconds_BorrowFromSeconds() {
+	public void SubMilliseconds_BorrowFromSecondsMJMK() {
 		StopWatch g = new StopWatch(1, 2);
 		g.sub(3);
 		Assert.assertEquals(g.getMilliseconds(), 999);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void SubMillisecondsTest_ToZeroOverflow() {
+	public void SubMillisecondsTest_ToZeroOverflowMJMK() {
 		StopWatch g = new StopWatch(2);
 		g.sub(5);
 	}
 
 	@Test
-	public void SubMillisecondsTest_BorrowFromMins() {
+	public void SubMillisecondsTest_BorrowFromMinsMJMK() {
 		StopWatch g = new StopWatch("21:51:001");
 		g.sub(50501);
 		Assert.assertEquals(g.getMilliseconds(), 500);
 	}
 
 	@Test
-	public void SubMillisecondsTest_BorrowFromMinsToZero() {
+	public void SubMillisecondsTest_BorrowFromMinsToZeroMJMK() {
 		StopWatch g = new StopWatch("1:01:001");
 		g.sub(61001);
 		Assert.assertEquals(g.getMilliseconds(), 0);
 	}
 
 	// @Test
-	// public void SubMillisecondsTest_IllegalParamNegative() {
+	// public void SubMillisecondsTest_IllegalParamNegativeMJMK() {
 	// StopWatch g = new StopWatch("1:01:001");
 	// g.sub(-1);
 	// Assert.assertEquals(g.getMilliseconds(), 1);
 	// }
 
 	@Test(expected = IllegalArgumentException.class)
-	public void SubMillisecondsTest_LargeParam() {
+	public void SubMillisecondsTest_LargeParamMJMK() {
 		StopWatch g = new StopWatch("1:51:981");
 		g.sub(540000);
 	}
 
 	@Test
-	public void SubMillisecondsTest_NormalTestSecs() {
+	public void SubMillisecondsTest_NormalTestSecsMJMK() {
 		StopWatch g = new StopWatch("1:51:981");
 		g.sub(6000);
 		Assert.assertEquals(g.getSeconds(), 45);
 	}
 
 	// @Test
-	// public void SubMillisecondsTest_TestSecsToZero() {
+	// public void SubMillisecondsTest_TestSecsToZeroMJMK() {
 	// StopWatch g = new StopWatch("1:11:981");
 	// g.sub(11000);
 	// Assert.assertEquals(g.getSeconds(), 0);
 	// }
 
 	@Test
-	public void SubMillisecondsTest_TestSecsCarryFromMins() {
+	public void SubMillisecondsTest_TestSecsCarryFromMinsMJMK() {
 		StopWatch g = new StopWatch("1:11:981");
 		g.sub(11982);
 		Assert.assertEquals(g.getSeconds(), 59);
 	}
 
 	@Test
-	public void SubMillisecondsTest_NormalTestMins() {
+	public void SubMillisecondsTest_NormalTestMinsMJMK() {
 		StopWatch g = new StopWatch("8:11:981");
 		g.sub(420000);
 		Assert.assertEquals(g.getMinutes(), 1);
 	}
 
 	// @Test
-	// public void SubStopWatchTest_ToZero() {
+	// public void SubStopWatchTest_ToZeroMJMK() {
 	// StopWatch g = new StopWatch("2:22:222");
 	// StopWatch n = new StopWatch("99:59:999");
 	// g.sub(n);
@@ -678,7 +678,7 @@ public class TestStopWatch {
 	// }
 
 	@Test
-	public void SubStopWatchTest_CarryFromSec() {
+	public void SubStopWatchTest_CarryFromSecMJMK() {
 		StopWatch g = new StopWatch("2:22:222");
 		StopWatch n = new StopWatch(223);
 		g.sub(n);
@@ -686,7 +686,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void SubStopWatchTest_CarryFromMin() {
+	public void SubStopWatchTest_CarryFromMinMJMK() {
 		StopWatch g = new StopWatch("2:22:222");
 		StopWatch n = new StopWatch("2:22:000");
 		g.sub(n);
@@ -694,7 +694,7 @@ public class TestStopWatch {
 	}
 
 	// @Test
-	// public void decTest_PastZero() {
+	// public void decTest_PastZeroMJMK() {
 	// StopWatch g = new StopWatch(4);
 	// int x;
 	// for (x = 1; x <= 30; x++) {
@@ -704,14 +704,7 @@ public class TestStopWatch {
 	// }
 
 	@Test
-	public void decTest_Normal() {
-		StopWatch g = new StopWatch(14);
-		g.dec();
-		Assert.assertEquals(13, g.getMilliseconds());
-	}
-
-	@Test
-	public void decTest_ToZero() {
+	public void decTest_ToZeroMJMK() {
 		StopWatch g = new StopWatch(4);
 		int x;
 		for (x = 1; x <= 4; x++) {
@@ -721,7 +714,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void decTest_CarryFromSec() {
+	public void decTest_CarryFromSecMJMK() {
 		StopWatch g = new StopWatch(2, 111);
 		int x;
 		for (x = 1; x <= 2000; x++) {
@@ -731,7 +724,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void incTest() {
+	public void incTestMJMK() {
 		StopWatch g = new StopWatch(6, 2, 111);
 		g.inc();
 		Assert.assertEquals(112, g.getMilliseconds());
@@ -739,7 +732,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void incSecTest() {
+	public void incSecTestMJMK() {
 		StopWatch g = new StopWatch(6, 2, 999);
 		g.inc();
 		Assert.assertEquals(g.toString(), "6:03:000");
@@ -747,7 +740,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void incMinTest() {
+	public void incMinTestMJMK() {
 		StopWatch g = new StopWatch(6, 59, 999);
 		g.inc();
 		Assert.assertEquals(g.toString(), "7:00:000");
@@ -755,7 +748,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void suspendTest() {
+	public void suspendTestMJMK() {
 		StopWatch g = new StopWatch(1, 1, 1);
 		g.suspend(true);
 		g.add(1000);
@@ -768,7 +761,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void unsuspendTest() {
+	public void unsuspendTestMJMK() {
 		StopWatch g = new StopWatch(1, 1, 1);
 		g.suspend(true);
 		g.add(1000);
@@ -783,7 +776,7 @@ public class TestStopWatch {
 	}
 
 	@Test
-	public void resetTest() {
+	public void resetTestMJMK() {
 		StopWatch g = new StopWatch(1, 1, 1);
 		g.reset();
 		Assert.assertEquals(g.toString(), "0:00:000");
