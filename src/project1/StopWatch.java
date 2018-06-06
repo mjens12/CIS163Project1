@@ -120,11 +120,12 @@ public class StopWatch {
 	 *             otherwise outside the 0-60 and 0-999 bounds of
 	 *             seconds and milliseconds respectively.
 	 *****************************************************************/
-	public StopWatch(int minutes, int seconds, int milliseconds) {
+	public StopWatch(int minutes, int seconds, int milliseconds)
+			throws SWIllegalArgumentException {
 		super();
 		if (seconds > 59 || milliseconds > 999 || minutes < 0
 				|| seconds < 0 || milliseconds < 0) {
-			throw new IllegalArgumentException();
+			throw new SWIllegalArgumentException();
 		} else {
 			this.seconds = seconds;
 			this.minutes = minutes;
@@ -147,11 +148,12 @@ public class StopWatch {
 	 *             otherwise outside the 0-60 and 0-999 bounds of
 	 *             seconds and milliseconds respectively.
 	 *****************************************************************/
-	public StopWatch(int seconds, int milliseconds) {
+	public StopWatch(int seconds, int milliseconds)
+			throws SWIllegalArgumentException {
 		super();
 		if (seconds > 59 || milliseconds > 999 || seconds < 0
 				|| milliseconds < 0) {
-			throw new IllegalArgumentException();
+			throw new SWIllegalArgumentException();
 		} else {
 			this.seconds = seconds;
 			this.milliseconds = milliseconds;
@@ -171,10 +173,11 @@ public class StopWatch {
 	 *             if the parameters passed are alpha, negative, or
 	 *             otherwise outside the 0-999 bounds of milliseconds.
 	 *****************************************************************/
-	public StopWatch(int milliseconds) {
+	public StopWatch(int milliseconds)
+			throws SWIllegalArgumentException {
 		super();
 		if (milliseconds > 999 || milliseconds < 0) {
-			throw new IllegalArgumentException();
+			throw new SWIllegalArgumentException();
 		} else {
 			this.milliseconds = milliseconds;
 		}
@@ -225,7 +228,8 @@ public class StopWatch {
 	 *             otherwise outside the 0-60 and 0-999 bounds of
 	 *             seconds and milliseconds respectively.
 	 *****************************************************************/
-	public StopWatch(String startTime) {
+	public StopWatch(String startTime)
+			throws SWIllegalArgumentException {
 		int count = 0;
 
 		minutes = 0;
@@ -256,7 +260,7 @@ public class StopWatch {
 
 			if (sec > 59 || milli > 999 || min < 0 || sec < 0
 					|| milli < 0) {
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			}
 
 			else {
@@ -280,7 +284,7 @@ public class StopWatch {
 					(startTime.indexOf(':') + 1), startTime.length()));
 
 			if (sec > 59 || milli > 999 || sec < 0 || milli < 0) {
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			}
 
 			else {
@@ -299,7 +303,7 @@ public class StopWatch {
 			milli = Integer.parseInt(startTime);
 
 			if (milli > 999 || milli < 0) {
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			} else
 				milliseconds = milli;
 		}
@@ -391,10 +395,11 @@ public class StopWatch {
 	 * @throws IllegalArgumentException
 	 *             if milliseconds is a negative number
 	 *****************************************************************/
-	public void add(int milliseconds) {
+	public void add(int milliseconds)
+			throws SWIllegalArgumentException {
 		if (!suspend) {
 			if (milliseconds < 0)
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			else {
 				for (int i = milliseconds; i > 0; i--) {
 					this.inc();
@@ -450,13 +455,14 @@ public class StopWatch {
 	 *             total number of milliseconds on the stopwatch you are
 	 *             subtracting from
 	 *****************************************************************/
-	public void sub(int milliseconds) {
+	public void sub(int milliseconds)
+			throws SWIllegalArgumentException {
 		if (!suspend) {
 			if (milliseconds < 0) {
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			} else {
 				if (milliseconds > toMilli(this)) {
-					throw new IllegalArgumentException();
+					throw new SWIllegalArgumentException();
 				} else {
 					for (int i = milliseconds; i > 0; i--)
 						this.dec();
@@ -479,13 +485,13 @@ public class StopWatch {
 	 *             total number of milliseconds on the stopwatch you are
 	 *             subtracting from
 	 *****************************************************************/
-	public void sub(StopWatch other) {
+	public void sub(StopWatch other) throws SWIllegalArgumentException {
 		if (!suspend) {
 			if (toMilli(other) < 0) {
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			} else {
 				if (toMilli(other) > toMilli(this)) {
-					throw new IllegalArgumentException();
+					throw new SWIllegalArgumentException();
 				} else {
 					this.sub(toMilli(other));
 				}
@@ -497,10 +503,10 @@ public class StopWatch {
 	 * Decrements the stopwatch by 1 millisecond and handles rollover
 	 * for minutes, seconds, and milliseconds when subtracting.
 	 *****************************************************************/
-	public void dec() {
+	public void dec() throws SWIllegalArgumentException {
 		if (!suspend) {
 			if (toMilli(this) == 0)
-				throw new IllegalArgumentException();
+				throw new SWIllegalArgumentException();
 			else {
 				if (this.milliseconds > 0) {
 					this.milliseconds--;

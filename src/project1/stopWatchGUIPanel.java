@@ -243,13 +243,15 @@ public class stopWatchGUIPanel extends JPanel {
 
 			if (event.getSource() == sub) {
 				try {
-					StopWatch temp = new StopWatch("" + min.getText() + ":" + sec.getText() + ":" + milli.getText());
+					StopWatch temp = new StopWatch(
+							"" + min.getText() + ":" + sec.getText()
+									+ ":" + milli.getText());
 
 					stopWatchTimer.sub(temp);
 					time.setText(stopWatchTimer.toString());
 				}
 
-				catch (IllegalArgumentException e) {
+				catch (SWIllegalArgumentException e) {
 					JOptionPane.showMessageDialog(null,
 							"Please enter a valid number to proceed. Negative, alpha values, "
 									+ "second numbers above 59, milliseconds numbers above 999, "
@@ -260,10 +262,12 @@ public class stopWatchGUIPanel extends JPanel {
 
 			if (event.getSource() == add) {
 				try {
-					StopWatch temp = new StopWatch("" + min.getText() + ":" + sec.getText() + ":" + milli.getText());
+					StopWatch temp = new StopWatch(
+							"" + min.getText() + ":" + sec.getText()
+									+ ":" + milli.getText());
 					stopWatchTimer.add(temp);
 					time.setText(stopWatchTimer.toString());
-				} catch (IllegalArgumentException e) {
+				} catch (SWIllegalArgumentException e) {
 					JOptionPane.showMessageDialog(null,
 							"Please enter a valid number to proceed. Negative, alpha values, "
 									+ "second numbers above 59, milliseconds numbers above 999, "
@@ -281,8 +285,9 @@ public class stopWatchGUIPanel extends JPanel {
 				try {
 					stopWatchTimer.dec();
 					time.setText(stopWatchTimer.toString());
-				} catch (IllegalArgumentException e) {
-					JOptionPane.showMessageDialog(null, "You can't decrease the timer below zero!");
+				} catch (SWIllegalArgumentException e) {
+					JOptionPane.showMessageDialog(null,
+							"You can't decrease the timer below zero!");
 				}
 			}
 
